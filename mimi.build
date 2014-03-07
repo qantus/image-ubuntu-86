@@ -12,6 +12,6 @@ run chsh -s /bin/zsh user
 run echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 run git clone git://github.com/robbyrussell/oh-my-zsh.git /home/user/.oh-my-zsh
 run cp /home/user/.oh-my-zsh/templates/zshrc.zsh-template /home/user/.zshrc
-run git clone git@github.com:mimicloud/container-configs.git /home/user/.container-configs
+run git clone git://github.com/mimicloud/container-configs.git /home/user/.container-configs
 run /home/user/.container-configs/install.sh
 run apt-get clean
