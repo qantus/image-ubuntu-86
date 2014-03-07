@@ -1,0 +1,12 @@
+#######################################################################################
+# Hetzner APT-Mirror
+
+deb http://mirror.hetzner.de/ubuntu/packages precise main restricted universe multiverse
+deb http://mirror.hetzner.de/ubuntu/packages precise-backports main restricted universe multiverse
+deb http://mirror.hetzner.de/ubuntu/packages precise-updates main restricted universe multiverse
+deb http://mirror.hetzner.de/ubuntu/security precise-security main restricted universe multiverse
+
+# deb http://archive.ubuntu.com/ubuntu precise main restricted universe
+# deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe
+# deb http://security.ubuntu.com/ubuntu precise-security main restricted universe multiverse
+# deb http://archive.canonical.com/ubuntu precise partner

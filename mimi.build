@@ -1,5 +1,6 @@
 template ubuntu-12.04-x86
 
+add etc/apt/sources.list /etc/apt/sources.list
 run apt-get update
 run locale-gen en_US.UTF-8
 run dpkg-reconfigure locales
