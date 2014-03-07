@@ -12,6 +12,5 @@ run chsh -s /bin/zsh user
 run git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 run cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 run git clone git@github.com:mimicloud/container-configs.git ~/.container-configs
-run ln -s ~/.container-configs/.zshrc ~/.zshrc
-run ln -s ~/.container-configs/.vimrc ~/.vimrc
+run ~/.container-configs/install.sh
 run apt-get clean
