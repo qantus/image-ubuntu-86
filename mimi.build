@@ -9,8 +9,8 @@ run useradd -m -d /home/user -g user -c "Default container user" -s /bin/bash us
 run echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 run apt-get install -yq zsh git-core
 run chsh -s /bin/zsh user
-run git clone git://github.com/robbyrussell/oh-my-zsh.git /home/user/.oh-my-zsh
+run git clone -o StrictHostKeyChecking=no git://github.com/robbyrussell/oh-my-zsh.git /home/user/.oh-my-zsh
 run cp /home/user/.oh-my-zsh/templates/zshrc.zsh-template /home/user/.zshrc
-run git clone git@github.com:mimicloud/container-configs.git /home/user/.container-configs
+run git clone -o StrictHostKeyChecking=no git@github.com:mimicloud/container-configs.git /home/user/.container-configs
 run /home/user/.container-configs/install.sh
 run apt-get clean
