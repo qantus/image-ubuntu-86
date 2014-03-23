@@ -7,4 +7,4 @@ done;
 
 CTID=$(echo $USER | sed 's/container//g')
 
-sudo wsh --socket /var/lib/vz/root/$CTID/var/wshd.sock --user user $@
+sudo wsh --socket /var/lib/vz/root/$CTID/run/wshd.sock --user user $@

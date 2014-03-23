@@ -1,4 +1,4 @@
 #!/bin/bash
 exec 2>&1
 
-exec wshd --run /var
+exec wshd --run /run
