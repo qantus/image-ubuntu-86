@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while [ "$1" == "-c" ]; do
+    shift;
+    echo "$@";
+done;
+
+CTID=$(echo $USER | sed 's/container//g')
+
+sudo wsh --socket /var/lib/vz/root/$CTID/var/wshd.sock --user user $@
