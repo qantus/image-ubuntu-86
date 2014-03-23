@@ -2,7 +2,7 @@ template ubuntu-12.04-x86
 
 add etc/apt/sources.list /etc/apt/sources.list
 run apt-get update
-run DEBIAN_FRONTEND=noninteractive apt-get install -yq software-properties-common python-software-properties
+run DEBIAN_FRONTEND=noninteractive apt-get install -yq software-properties-common python-software-properties runit
 run locale-gen en_US.UTF-8
 run dpkg-reconfigure locales
 run update-locale en_US.UTF-8
@@ -17,4 +17,15 @@ run echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 run git clone git://github.com/robbyrussell/oh-my-zsh.git /home/user/.oh-my-zsh
 run git clone git://github.com/mimicloud/container-configs.git /home/user/.container-configs
 run sh /home/user/.container-configs/install.sh
+
+# Download wshd
+run wget -O /usr/local/bin/wshd https://github.com/hosting107/wsh-bin/raw/master/wshd
+run chmod +x /usr/local/bin/wshd
+
+# Add wshd to runit
+add etc/sv /etc/
+run chmod +x /etc/sv/wshd/run
+run chmod +x /etc/sv/wshd/log/run
+run ln -s /etc/sv/wshd /etc/service/wshd
+
 run apt-get clean
