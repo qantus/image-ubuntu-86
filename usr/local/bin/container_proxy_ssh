@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -oe pipefail;
+
+CTID=$(echo $USER | sed 's/container//g')
+IP=$(sudo vzlist -H -o ip $CTID)
+
+if [[ "$@" == "" ]]; then
+    ssh user@$IP
+else
+    ssh -T user@$IP $@
+fi

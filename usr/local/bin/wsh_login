@@ -1,10 +1,15 @@
 #!/bin/bash
 
-set -euo pipefail
+#set -u
+set -eo pipefail
 
 while [ "$1" == "-c" ]; do
     shift;
-done;
-
+done
 CTID=$(echo $USER | sed 's/container//g')
-sudo wsh --socket /var/lib/vz/root/$CTID/run/wshd.sock --user user $@
+
+if [[ "$@" == "" ]]; then
+    sudo wsh --socket /var/lib/vz/root/$CTID/run/wshd.sock --user user $@
+else
+    echo "$@" | sudo wsh --socket /var/lib/vz/root/$CTID/run/wshd.sock --user user
+fi
