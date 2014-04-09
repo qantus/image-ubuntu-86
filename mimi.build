@@ -29,3 +29,4 @@ run chmod +x /etc/sv/wshd/log/run
 run ln -s /etc/sv/wshd /etc/service/wshd
 
 run apt-get clean
+run echo 'LC_ALL="en_US.UTF-8"' > /etc/default/locale
